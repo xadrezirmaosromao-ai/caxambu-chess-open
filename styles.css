@@ -1,0 +1,75 @@
+/* Caxambu Chess Open — estilos compartilhados */
+:root{
+  --tinta:#0C1B33;      /* azul-noite, texto e fundos escuros */
+  --azul:#004AAD;       /* azul do peão Irmãos Romão */
+  --azul-claro:#DCE6F5; /* casa clara do tabuleiro */
+  --papel:#F5F7FB;      /* fundo da página */
+  --branco:#FFFFFF;
+  --ouro:#B8912F;       /* premiação */
+  --ouro-claro:#F3E7C4;
+  --cinza:#5A6679;
+  --linha:#D5DCE8;
+  --display:"Zilla Slab", Rockwell, "Roboto Slab", Georgia, serif;
+  --texto:"Public Sans", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --largura:1120px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;font-family:var(--texto);font-size:1.0625rem;line-height:1.6;color:var(--tinta);background:var(--papel);-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--azul)}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--ouro);outline-offset:3px;border-radius:4px}
+h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.1;margin:0 0 .5em}
+h2{font-size:clamp(2rem,5vw,2.9rem);font-style:italic;letter-spacing:-.01em}
+h3{font-size:1.35rem}
+p{margin:0 0 1em}
+.wrap{max-width:var(--largura);margin:0 auto;padding:0 1.25rem}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.intro{max-width:62ch;color:var(--cinza);font-size:1.1rem}
+
+/* Botões */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;font:600 1rem/1 var(--texto);text-decoration:none;padding:.95rem 1.4rem;border-radius:6px;border:2px solid transparent;cursor:pointer;min-height:48px}
+.btn-primario{background:var(--azul);color:#fff}
+.btn-primario:hover{background:#003A88}
+.btn-claro{background:#fff;color:var(--tinta)}
+.btn-claro:hover{background:var(--azul-claro)}
+.btn-contorno{border-color:currentColor;color:inherit;background:transparent}
+.btn-contorno:hover{background:rgba(255,255,255,.08)}
+.btn svg{width:20px;height:20px;flex:none}
+
+/* Cabeçalho fixo */
+.topo{position:sticky;top:0;z-index:50;background:rgba(12,27,51,.97);color:#fff;border-bottom:1px solid rgba(255,255,255,.08)}
+.topo .wrap{display:flex;align-items:center;gap:1rem;height:64px}
+.marca{display:flex;align-items:center;gap:.6rem;color:#fff;text-decoration:none;font:700 italic 1.25rem/1 var(--display);white-space:nowrap}
+.marca img{height:40px;width:auto}
+.menu{display:flex;gap:1.3rem;margin-left:auto;list-style:none;padding:0;margin-top:0;margin-bottom:0}
+.menu a{color:#DCE3EE;text-decoration:none;font-size:.95rem}
+.menu a:hover{color:#fff}
+.topo .btn{padding:.7rem 1rem;min-height:42px;font-size:.95rem}
+.menu-btn{display:none;background:none;border:0;color:#fff;padding:.5rem;margin-left:auto;cursor:pointer}
+.menu-btn svg{width:28px;height:28px}
+@media (max-width:960px){
+  .menu-btn{display:block}
+  .menu{display:none;position:absolute;top:64px;left:0;right:0;flex-direction:column;gap:0;background:var(--tinta);padding:.5rem 1.25rem 1rem;margin:0;border-bottom:1px solid rgba(255,255,255,.1)}
+  .menu.aberto{display:flex}
+  .menu a{display:block;padding:.8rem 0;border-bottom:1px solid rgba(255,255,255,.08);font-size:1.05rem}
+  .topo .btn{margin-left:.25rem}
+}
+@media (max-width:420px){.marca span{display:none}}
+
+/* Seções */
+.secao{padding:clamp(4rem,9vw,6.5rem) 0}
+.secao-branca{background:var(--branco)}
+.secao-escura{background:var(--tinta);color:#fff}
+.secao-escura .intro{color:#B9C4D6}
+.secao-escura a{color:#9EC2FF}
+
+/* Rodapé */
+.rodape{background:#08142A;color:#B9C4D6;padding:3rem 0 2rem;font-size:.95rem}
+.rodape a{color:#fff}
+.rodape .wrap{display:grid;gap:2rem}
+@media (min-width:760px){.rodape .wrap{grid-template-columns:2fr 1fr 1fr}}
+.rodape h3{color:#fff;font-size:1.1rem}
+.rodape ul{list-style:none;padding:0;margin:0;display:grid;gap:.4rem}
+.rodape .legal{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.1);padding-top:1.25rem;font-size:.85rem}
